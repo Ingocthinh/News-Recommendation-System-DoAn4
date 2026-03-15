@@ -60,5 +60,4 @@ npm run dev
 
 ---
 
-## Đối tượng sử dụng
-Dự án được dọn dẹp chuyên nghiệp (Clean Code), làm sản phẩm hoàn thiện sẵn sàng để làm Portfolio, Đồ án tốt nghiệp / kết thúc môn, hoặc nền tảng để phát triển startup nhỏ lĩnh vực tổng hợp và tái phân phối nội dung.
+Mọi thắc mắc liên hệ email:ic.lengocthinh@gmail.com
