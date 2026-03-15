@@ -3,7 +3,7 @@
 Dự án này là một nền tảng báo chí kỹ thuật số hoàn chỉnh, tích hợp Trí tuệ Nhân tạo (AI) để gợi ý nội dung báo chí cá nhân hóa theo thời gian thực (Real-time).
 
 ![Demo AI Recommendation](image.png)
-
+link dowload toàn bộ dự án scr:https://drive.google.com/file/d/1c-Gj5OcAmHk9wbXp_iFkooqiRu7opobM/view?usp=drive_link
 ## Kiến Trúc Hệ Thống (Microservices)
 
 Hệ thống được thiết kế theo chuẩn Enterprise, tách biệt hoàn toàn 4 luồng xử lý độc lập:
