@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./data:/app/data
+    environment:
+      - DATABASE_URL=file:/app/data/news.db
+      - ML_SERVICE_URL=http://ml_service:5000
+      - PORT=3000
+    depends_on:
+      - ml_service
+
+  ml_service:
+    build: ./ml_service
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./data:/app/data
+      - ./data_train:/app/data_train
+    environment:
+      - PORT=5000
+
+  crawler:
+    build: ./crawler
+    volumes:
+      - ./data:/app/data
+    environment:
+      - DB_PATH=/app/data/news.db
+    # This service could run once or be set to a schedule
+    command: python main_crawler.py
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "5173:5173"
+    environment:
+      - VITE_API_BASE=http://localhost:3000/api

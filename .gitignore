@@ -1,0 +1,28 @@
+# Node.js
+node_modules/
+backend/node_modules/
+frontend/node_modules/
+dist/
+build/
+*.log
+
+# Python
+ml_service/.venv/
+ml_service/__pycache__/
+*.pyc
+
+# Data and Models
+data_train/
+data/news.db
+ml_service/model/*.pkl
+ml_service/model/*.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env files
+.env
+.env.local
+.env.development
+.env.production

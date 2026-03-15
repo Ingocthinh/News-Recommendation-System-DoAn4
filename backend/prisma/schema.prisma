@@ -1,0 +1,61 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model News {
+  id           Int      @id @default(autoincrement())
+  title        String
+  content      String
+  summary      String?
+  image_url    String?
+  category     String
+  source       String
+  url          String   @unique
+  published_at DateTime
+  created_at   DateTime @default(now())
+
+  behaviors       Behavior[]
+  recommendations Recommendation[]
+}
+
+model User {
+  id         Int      @id @default(autoincrement())
+  username   String   @unique
+  email      String   @unique
+  password   String
+  created_at DateTime @default(now())
+
+  behaviors       Behavior[]
+  recommendations Recommendation[]
+}
+
+model Behavior {
+  id        Int      @id @default(autoincrement())
+  user_id   Int
+  news_id   Int
+  action     String   // click, read, like
+  dwell_time Int      @default(0)
+  timestamp  DateTime @default(now())
+
+  user User @relation(fields: [user_id], references: [id])
+  news News @relation(fields: [news_id], references: [id])
+}
+
+model Recommendation {
+  id         Int      @id @default(autoincrement())
+  user_id    Int
+  news_id    Int
+  score      Float    // 0.0 - 1.0
+  created_at DateTime @default(now())
+
+  user User @relation(fields: [user_id], references: [id])
+  news News @relation(fields: [news_id], references: [id])
+}
