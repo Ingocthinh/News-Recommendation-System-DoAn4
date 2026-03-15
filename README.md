@@ -2,7 +2,6 @@
 
 Dự án này là một nền tảng báo chí kỹ thuật số hoàn chỉnh, tích hợp Trí tuệ Nhân tạo (AI) để gợi ý nội dung báo chí cá nhân hóa theo thời gian thực (Real-time).
 
-![Demo AI Recommendation](https://placehold.co/800x400/1e1e2a/6b6b85?text=Dự+Án+Tin+Tức+AI)
 
 ## Kiến Trúc Hệ Thống (Microservices)
 
