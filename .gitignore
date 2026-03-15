@@ -12,10 +12,7 @@ ml_service/__pycache__/
 *.pyc
 
 # Data and Models
-data_train/
-data/news.db
-ml_service/model/*.pkl
-ml_service/model/*.json
+data_train/vietnamese_news_train.csv
 
 # OS
 .DS_Store
